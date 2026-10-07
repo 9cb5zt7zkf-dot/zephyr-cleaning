@@ -144,6 +144,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .svc-intro { position: sticky; top: calc(var(--hh) + 32px); }
 .svc-intro h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.05; letter-spacing: -0.03em; font-variation-settings: 'wdth' 85; margin-bottom: 18px; }
 .svc-intro p { color: var(--slate); font-size: 1.05rem; max-width: 40ch; }
+.svc-jump { margin-top: 28px; display: grid; gap: 2px; }
+.svc-jump a { display: inline-block; padding: 6px 0; font-weight: 600; color: var(--slate); border-bottom: 1.5px solid transparent; transition: color .2s, border-color .2s; }
+.svc-jump a:hover, .svc-jump a.on { color: var(--ink); border-color: var(--glass-deep); }
+.svc-group { scroll-margin-top: calc(var(--hh) + 24px); }
 .svc-group + .svc-group { margin-top: 48px; }
 .svc-group h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--glass-deep); padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
 .svc-group li { border-bottom: 1px solid var(--line); }
@@ -217,6 +221,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .est { max-width: 560px; }
   .svc-grid, .faq-grid, .book-grid, .areas-grid { grid-template-columns: 1fr; }
   .svc-intro { position: static; }
+  .svc-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+  .svc-jump a { padding: 8px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--white); font-size: .9rem; }
 }
 @media (max-width: 860px) {
   :root { --hh: 64px; }

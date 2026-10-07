@@ -142,6 +142,15 @@ $$('[data-goto]').forEach((b) => b.addEventListener('click', () => {
   $('#estimate').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
 }));
 
+// Highlight the service group in view
+if ('IntersectionObserver' in window) {
+  const jl = $$('.svc-jump a');
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting) jl.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === `#${e.target.id}`));
+  }), { rootMargin: '-40% 0px -55% 0px' });
+  $$('.svc-group').forEach((g) => io.observe(g));
+}
+
 // Room checklist tabs
 tabs($('.room-tabs'));
 
